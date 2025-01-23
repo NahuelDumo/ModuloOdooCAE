@@ -5,7 +5,7 @@
                 <!-- Parte izquierda del footer -->
                 <div name="footer_left_column" class="col-8 text-start">
                     <img t-if="o.afip_cae_qr" 
-                         t-att-src="'data:image/png;base64,' + o.afip_cae_qr" 
+                         t-att-src="'data:image/png;base64,' + o.afip_cae_qr.decode('utf-8')" 
                          style="max-height:80px;"/>
                 </div>
                 <!-- Parte derecha del footer -->
