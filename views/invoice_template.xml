@@ -4,14 +4,14 @@
             <div class="row">
                 <!-- Parte izquierda del footer -->
                 <div name="footer_left_column" class="col-8 text-start">
-                    <img t-if="object.afip_cae_qr" 
-                         t-att-src="'data:image/png;base64,' + object.afip_cae_qr" 
+                    <img t-if="o.afip_cae_qr" 
+                         t-att-src="'data:image/png;base64,' + o.afip_cae_qr" 
                          style="max-height:50px;"/>
                 </div>
                 <!-- Parte derecha del footer -->
                 <div name="footer_right_column" class="col-4 text-end">
-                    <p>CAE: <t t-esc="object.x_cae_number or 'N/A'"/></p>
-                    <p>Fecha de Vencimiento CAE: <t t-esc="object.x_cae_due_date or 'N/A'"/></p>
+                    <p>CAE: <t t-esc="o.x_cae_number or 'N/A'"/></p>
+                    <p>Fecha de Vencimiento CAE: <t t-esc="o.x_cae_due_date or 'N/A'"/></p>
                     <div name="pager" t-if="report_type == 'pdf'">
                         Page: <span class="page"/> / <span class="topage"/>
                     </div>
