@@ -1,0 +1,21 @@
+<odoo>
+    <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+        <xpath expr="//div[@class='footer']" position="inside">
+            <!-- Coloca el QR a la izquierda -->
+            <div style="float:left; padding-right:10px;">
+                <img t-att-src="'data:image/png;base64,' + object.afip_cae_qr"/>
+            </div>
+            
+            <!-- Coloca el número de CAE a la derecha -->
+            <div style="text-align:right;">
+                <p>
+                    CAE: <t t-esc="object.x_cae_number or ' '"/>
+                </p>
+                
+                <p>
+                    Fecha de Vencimiento CAE: <t t-esc="object.x_cae_due_date or ' '"/>
+                </p>
+            </div>
+        </xpath>
+    </template>
+</odoo>
