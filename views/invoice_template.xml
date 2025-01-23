@@ -1,17 +1,17 @@
 <odoo>
     <template id="custom_report_invoice_document" inherit_id="l10n_ar.report_invoice_document">
-        <!-- Ajustamos el pie de página -->
         <xpath expr="//t[@t-set='custom_footer']/div[@class='row']" position="replace">
             <div class="row">
                 <!-- Parte izquierda del footer -->
                 <div name="footer_left_column" class="col-8 text-start">
-                    <img t-att-src="'data:image/png;base64,' + object.afip_cae_qr" style="max-height:50px;"/>
+                    <img t-if="object.afip_cae_qr" 
+                         t-att-src="'data:image/png;base64,' + object.afip_cae_qr" 
+                         style="max-height:50px;"/>
                 </div>
                 <!-- Parte derecha del footer -->
                 <div name="footer_right_column" class="col-4 text-end">
                     <p>CAE: <t t-esc="object.x_cae_number or 'N/A'"/></p>
                     <p>Fecha de Vencimiento CAE: <t t-esc="object.x_cae_due_date or 'N/A'"/></p>
-                    <!-- Agregamos el paginador si es un PDF -->
                     <div name="pager" t-if="report_type == 'pdf'">
                         Page: <span class="page"/> / <span class="topage"/>
                     </div>
