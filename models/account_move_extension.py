@@ -10,4 +10,4 @@ class AccountInvoice(models.Model):
         for record in self:
             cae_number = record.x_cae_number
             cae_due_date = record.x_cae_due_date
-            record.afip_cae_qr = AfipCAE.generate_qr(cae_number, cae_due_date).decode('utf-8')  # Decodifica el v
+            record.afip_cae_qr = AfipCAE.generate_qr(cae_number, cae_due_date)
