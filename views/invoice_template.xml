@@ -6,7 +6,7 @@
                 <div name="footer_left_column" class="col-8 text-start">
                     <img t-if="o.afip_cae_qr" 
                          t-att-src="'data:image/png;base64,' + o.afip_cae_qr" 
-                         style="max-height:50px;"/>
+                         style="max-height:80px;"/>
                 </div>
                 <!-- Parte derecha del footer -->
                 <div name="footer_right_column" class="col-4 text-end">
